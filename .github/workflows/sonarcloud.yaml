@@ -46,4 +46,5 @@ jobs:
           cd C:\actions-runner\_work\sonarQubeDotNet\sonarQubeDotNet
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"techDebtLTIM_sonarQubeDotNet" /o:"techdebtltim" /d:sonar.token="${{ secrets.SONARCLOUD_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build eShopOnWeb.sln
+          dotnet test --collect "Code Coverage"
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONARCLOUD_TOKEN }}"
